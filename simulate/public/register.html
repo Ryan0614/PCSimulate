@@ -1,0 +1,101 @@
+ 
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-itunes-app" content="app-id=668876137" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    <link type="text/css" rel="stylesheet" href="../css/fw.css" />
+    <link type="text/css" rel="stylesheet" href="../css/app.css" />
+    <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    
+    <link type="text/css" rel="stylesheet" href="../css/signup.css" /> 
+    <style>
+        body{ background: #000;}
+        html{padding: 0px;}
+        .app_header{ background: #636363; border-bottom-color: #636363;}
+        .com_mylogin_login_btn{ font-weight: normal; background: #986E4F;}
+    </style>
+    <title>账号注册</title>   
+    
+</head>
+<body>
+    
+<div class="fw_body_header">
+<link rel="stylesheet" type="text/css" href="../css/newhome.css" />
+<link href="../css/fangtai.css" rel="stylesheet" type="text/css" />
+<style>
+    
+</style>
+<div class="app_header" style="position: inherit">
+    <div class="app_top">
+        <div class="app_head_cmp">
+            <a id="home_app_company" class="app_company">
+                <i class="ft_logo"></i>
+            </a>
+        </div>      
+    </div>    
+</div></div>
+	<div class="fw_body_center">
+        
+    <div class="ftlg_bg">
+        <div class="com_mylogin_content">           
+            <div class="com_mylogin_content_right_panl">
+                <span class="com_mylogin_login_title">账号注册</span>
+                <div class="com_mylogin_login_txt_bg">
+                    <input class="com_mylogin_login_username" id="input_LoginName" placeholder="请输入账号名" type="text" tabindex="1" value="" />          
+                </div>
+                <div class="com_mylogin_login_txt_bg">
+                    <input class="com_mylogin_login_password" id="input_PassWord" type="password" placeholder="请输入您的密码" tabindex="2" value="" onkeydown="onkey(event)"/>
+                </div>
+                <div class="com_mylogin_login_txt_bg">
+                    <input class="com_mylogin_login_password" id="input_PassWord2" type="password" placeholder="请再次确认您的密码" tabindex="2" value="" />
+                </div>
+                <div class="com_mylogin_login_down_tips" style="display:none">
+                    <div class="ftlg_left">
+                        <input type="checkbox" class="" id="cb_kl" tabindex="3" />在本台电脑上保持登录
+                    </div>                    
+                </div>
+                <div style="padding-top: 10px;">
+                    <div class="com_mylogin_login_btn" id="loginIn" onclick="register()"">确认</div>
+                </div>
+                <!-- <div>
+                    <span class="app_ft_ewm lt"></span>
+                     <p style="font-size: 16px; padding-top: 50px; padding-left:100px; display:block; line-height:25px;">扫一扫，快捷下载安装<br />
+                        <a href="/down/down.html" style="padding-top:10px; font-size: 14px; color: #6F7276; text-decoration: none;">点击下载移动APP</a>
+                    </p>
+                </div> -->
+            </div>    
+        </div>
+    </div>
+    <div class="multi_center_login"></div>
+    <input name="ctl00$Content_PlaceMain$txt_kick" type="hidden" id="txt_kick" />
+    <input name="ctl00$Content_PlaceMain$txt_kick_desc" type="hidden" id="txt_kick_desc" />
+		
+	</div>
+<!-- <div class="fw_body_footer">	 -->
+	     
+    <div class="fw_footer">
+        <div class="app_ft">
+            <div class="app_ft_2">
+                <div class="list-page">
+                        2016 © 宁波方太厨具有限公司.
+                    </div>
+                <span class="app_ft_num">咨询热线: 0574-23459568</span>
+            </div>
+        </div>
+    </div>
+<!-- </div>  -->
+    <!-- <script type="text/javascript" src="/resource/default/special/js/assets/sea.js"></script> -->
+<script type="text/javascript" src="../js/login.js"></script>
+<script>
+    function onkey(event){
+        if(event.keyCode==13){
+            register()
+        }
+    }
+</script>
+</body>
+</html>
+
