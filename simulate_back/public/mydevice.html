@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的设备</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <script type="text/javascript" src="../js/mydevice.js"></script>
+</head>
+<body>
+    <!-- <div style="position: absolute; top: 38.5px; left: 404.5px; z-index:1005; opacity:1; width: 454px; height: 370px;" >
+    </div> -->
+    <div style="margin-left:500px" id="brandDiv"><img src="../images/fotile.jpg" width="339px" height="55px" />
+    </div>
+
+<!--     <div class="topbar-wrap white">
+        <div class="topbar-inner clearfix">
+            <div class="topbar-logo-wrap clearfix">
+                <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="container clearfix">
+        <div class="sidebar-wrap">
+            <div class="sidebar-title">
+                <h1>菜单</h1>
+            </div>
+            <div class="sidebar-content">
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
+                        <ul class="sub-menu">
+                            <li><a href="../php/mydevice.php"><i class="icon-font">&#xe008;</i>设备管理</a></li>
+                            <li><a href="../php/mydevice_ctrl.php"><i class="icon-font">&#xe005;</i>设备操作</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="#"><i class="icon-font">&#xe018;</i>我的设备</a>
+                        <ul class="sub-menu">
+                            {foreach from=$devices key=k item=v}
+                            {/foreach}
+                            <li><a href="system.html"><i class="icon-font">&#xe017;</i>系统设置</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <!--/sidebar-->
+        <div class="main-wrap">
+            <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a >首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">设备管理</span></div>
+            </div>
+
+            
+            <div class="result-wrap">
+                <form name="myform" id="myform" method="post">
+                    <div class="sidebar-title" style="display:inline;">
+                        <span>当前用户:&nbsp;&nbsp;&nbsp;</span>
+                        <span id="div_user" class="sidebar-title" ></span>
+                        <span id="div_username">admin</span>
+                    </span>
+                    </div>
+                   
+                    <div class="result-title">
+                        <div class="result-list">
+                             <!-- <div class="search-wrap">
+                                <div class="search-content">
+                                    <form action="#" method="post"> -->
+                                        <table class="search-tab" style="display:inline;">
+                                            <tr>
+                                                <th >选择类型:</th>
+                                                <td>
+                                                    <select name="search-sort" id="tab1">
+                                                        <option value="0">全部</option>
+                                                        <option value="1">蒸箱</option>
+                                                        <option value="2">烤箱</option>
+                                                        <option value="3">微波炉</option>
+                                                        <option value="4">油烟机</option>
+                                                        <option value="5">燃气灶</option>
+                                                        <option value="6">消毒柜</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                         </table>
+                             <!--       </form>
+                                </div>
+                            </div> -->
+                            <a style="display:inline;" href="javascript:void(0)" onclick="addDevice()"><i class="icon-font"></i>新增设备</a>
+                            <!-- <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a> -->
+                        </div>
+                    </div>
+
+                    <div class="result-content">
+                        <table class="result-tab" width="100%">
+                            <tr>
+                                <!-- <th class="tc" width="5%"></th> -->
+                                <th>序号</th>
+                                <th>设备类型</th>
+                                <th>设备名称</th>
+                                <th>操作</th>
+                            </tr>
+                            <{foreach from=$devices key=k item=v}>
+                                <tr>
+                                    <td>{$k+1}</td>  
+                                    <td >{$v[0]}</td> <!--设备类型-->
+                                    <td><a href="{$v[1]}">{$v[2]}</a>
+                                    </td>
+                                    <td>
+                                        <a id="delete{$k+1}" class="link-del" href="#" onclick="delDevice({$v[3]})" >删除设备</a>
+                                    </td>
+                                </tr>                                                     
+                            {/foreach}
+                        </table>
+                       
+                    </div>
+                    <div class="list-page">
+                        2016 © 宁波方太厨具有限公司.
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--/main-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,341 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>厨电设备</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/KX.js"></script>
+</head>
+<body>
+<div style="text-align:center" id="brandDiv"><img src="images/fotile.jpg" width="339px" height="55px" />
+</div>
+<div style="margin-left:100px; width: 1100px;" class="container clearfix">
+    <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>公司产品</h1>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-list">
+                <li>
+                    <a id ="zx" href="#"><i class="icon-font">&#xe000;</i>蒸箱</a>
+                    <ul class="sub-menu">
+                        <li><a href="index.html"><i class="icon-font">&#xe001;</i>ZX001</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a id ="kx" href="#"><i class="icon-font">&#xe010;</i>烤箱</a>
+                    <ul class="sub-menu">
+                        <li><a href="KX001.html"><i class="icon-font">&#xe002;</i>KX001</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a id ="wb" href="#"><i class="icon-font">&#xe005;</i>微波炉</a>
+                    <ul class="sub-menu">
+                        <li><a href="WB001.html"><i class="icon-font">&#xe003;</i>WB001</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a id ="yy" href="#"><i class="icon-font">&#xe007;</i>油烟机</a>
+                    <ul class="sub-menu">
+                        <li><a href="YY001.html"><i class="icon-font">&#xe004;</i>YY001</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a id ="zj" href="#"><i class="icon-font">&#xe040;</i>灶具</a>
+                    <ul class="sub-menu">
+                        <li><a href="ZJ001.html"><i class="icon-font">&#xe005;</i>ZJ001</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a id ="xd" href="#"><i class="icon-font">&#xe050;</i>消毒柜</a>
+                    <ul class="sub-menu">
+                        <li><a href="XD001.html"><i class="icon-font">&#xe006;</i>XD001</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <!-- <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="index.html" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">订单查询</span></div>
+        </div> -->
+        <!-- <div class="search-wrap">
+            <div class="search-content">
+                <form action="#" method="post">
+                   
+                </form>
+            </div>
+        </div> -->
+
+        <div class="result-wrap">
+        
+        <div class="sidebar-wrap-1">
+            <h1>当前时间:</h1>
+        </div>
+        <div id="div0" class="sidebar-title" >
+            <h1>00:00:00</h1>
+        </div>
+         <div class="sidebar-wrap-1">
+            <h1>当前产品:</h1>
+        </div>
+        <div id="div00" class="sidebar-title" style="display:inline;">
+            
+        </div>
+        
+        <div id="div000" class="sidebar-title" style="float:right;">
+           <!-- <form name="checkform" action="" method="POST" id="checkform"> -->
+            <input type="button" name="subbtn" value="保存设置" onclick="javascript:checkform.submit();"/>
+            <!-- </form>   -->
+            <!-- <style>
+                    a.button {
+                        position: relative;
+                        color: rgba(255,255,255,1);
+                        text-decoration: none;
+                        background-color: rgba(219,87,5,1);
+                        font-family: 'Yanone Kaffeesatz';
+                        font-weight: 700;
+                        font-size: 3em;
+                        display: block;
+                        padding-top: 10px;
+                        -webkit-border-radius: 8px;
+                        -moz-border-radius: 8px;
+                        border-radius: 8px;
+                        -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+                        -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+                        box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+                        margin:  340px 1000px;
+                        width: 220px;
+                        
+                        
+                        
+                        text-align: center;
+                        
+                        -webkit-transition: all .1s ease;
+                        -moz-transition: all .1s ease;
+                        -ms-transition: all .1s ease;
+                        -o-transition: all .1s ease;
+                        transition: all .1s ease;
+                    }
+
+                    a.button:active {
+                        -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+                        -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+                        box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+                        position: relative;
+                        top: 6px;
+                    }
+        </style>
+        <a href="javascript:void(0);" class="button" onclick="getData(0)">Mcu校时</a> -->
+        </div>
+        
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <!-- <div class="result-list">
+                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                    </div> -->
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <!-- <th class="tc" width="5%"></th> -->
+                            <th>内容</th>
+                            <th>数值</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <!-- <td class="tc"><input name="id[]" value="" type="checkbox"></td> -->
+                            <td>运行状态</td>
+                            <td>开机</td>
+                             <td>
+                                <select name="search-sort" id="sel_0">                               
+                                    <option value="19">开机</option>
+                                    <option value="20">关机</option>
+                                    <option value="21">待机</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>照明灯</td> 
+                            <td>开</td> 
+                            <td>
+                                <form name="form1" >
+                                <input type="checkbox" name="checkbox1" value="checkbox"> 打开
+                                </form>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>工作模式</td> 
+                            <td>自动模式</td> 
+                            <td>
+                                <select name="search-sort" id="sel_0">                               
+                                    <option value="19">自动模式</option>
+                                    <option value="20">手动模式1</option>
+                                    <option value="21">手动模式2</option>
+                                </select>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>当前菜谱</td> 
+                            <td>本地菜谱1</td> 
+                            <td>
+                                <select name="search-sort" id="sel_0">                               
+                                    <option value="19">本地菜谱1</option>
+                                    <option value="20">本地菜谱2</option>
+                                    <option value="21">网络菜谱1</option>
+                                    <option value="21">网络菜谱2</option>
+                                </select>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>设定工作总时间(分)</td> 
+                            <td>10分</td> 
+                            <td>
+                                <input type="text" name="text0" value="10">
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>预约开始时间</td> 
+                            <td>17:20</td> 
+                            <td>
+                                <input type="text" name="text1" value="17:20">
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>预约结束时间</td> 
+                            <td>17:30</td> 
+                            <td>
+                                <input type="text" name="text2" value="17:30">
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>设定温度值1</td> 
+                            <td>10</td> 
+                            <td>
+                                <input type="text" name="text3" value="10">
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>设定温度值2</td> 
+                            <td>20</td> 
+                            <td>
+                                <input type="text" name="text4" value="20">
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>设定温度值3</td> 
+                            <td>30</td> 
+                            <td>
+                                <input type="text" name="text5" value="30">
+                            </td> 
+                        </tr>
+                         <tr>
+                            <td>加热盘</td> 
+                            <td>1000W</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>二级加热</td> 
+                            <td>500W</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>温度传感器1</td> 
+                            <td>400</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>温度传感器2</td> 
+                            <td>200</td> 
+                            <td></td> 
+                        </tr>
+                         <tr>
+                            <td>温度传感器3</td> 
+                            <td>100</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>水位传感器1</td> 
+                            <td>90%</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>水位传感器2</td> 
+                            <td>70%</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>压力传感器</td> 
+                            <td>100</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>加热膜</td> 
+                            <td>关</td> 
+                            <td>
+                                <form name="form1" >
+                                <input type="checkbox" name="checkbox1" value="checkbox"> 打开
+                                </form>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>贯穿热风机</td> 
+                            <td>关</td> 
+                            <td>
+                                <form name="form1" >
+                                <input type="checkbox" name="checkbox1" value="checkbox"> 打开
+                                </form>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>蒸箱类型</td> 
+                            <td>微压</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>工作剩余时间</td> 
+                            <td>10分</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>门电子锁</td> 
+                            <td>关</td> 
+                            <td>
+                                <form name="form1" >
+                                <input type="checkbox" name="checkbox1" value="checkbox"> 打开
+                                </form>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>门控开关状态</td> 
+                            <td>关</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>食物位置</td> 
+                            <td>10</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>蒸箱故障号</td> 
+                            <td>0</td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>OTA(远程升级)</td> 
+                            <td>不支持</td> 
+                            <td></td> 
+                        </tr>
+                       
+                    </table>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

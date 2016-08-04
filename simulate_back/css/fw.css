@@ -1,0 +1,120 @@
+html{color:#6F7276;}
+html,body{height:100%}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td
+{margin:0;padding:0;}
+table {border-collapse:collapse; border-spacing:0;}
+fieldset, img{ border:0;}
+em, strong{font-style:normal; font-weight:normal;}
+li{list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; font-weight:normal;}
+body, input, button, textarea,table{font-size:12px; font-family:Microsoft YaHei,Arial,Helvetica,sans-serif;}
+input,button,textarea{ background: #fff; border: 1px solid #E2E5E7;}
+input::-ms-clear{display:none;} 
+input::-ms-reveal{ display: none;}
+a{ text-decoration:none;outline:none; color: #37A7E0;}
+a:hover{ cursor:pointer;}
+th, td{vertical-align:top;}
+.fw_left, .lt{ float: left;}
+.fw_right, .rt{ float: right}
+.fw_clear, .clear{ clear: both;}
+.fw_hidden, .hide{ display: none;}
+.fw_overflow, .oflow{ overflow: hidden;}
+.fw_middle, .vmdl{ vertical-align: middle;}
+.vtop{ vertical-align: top;}
+.fw_relative, .rel{ position: relative;}
+.ablt{ position: absolute;}
+.tright{ text-align: right;}
+.tleft{ text-align: left;}
+.tcenter{ text-align: center;}
+.fw_mask,.fw_mask0{top: 0px; left: 0px; background: black; position: fixed; width: 100%; height: 100%;z-index: 90;overflow: hidden; filter:alpha(opacity=30);-moz-opacity:0.3;-khtml-opacity: 0.5;opacity: 0.3; display:none;}
+.fw_mask0{filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;}
+.lg_fm_1,.lg_fm_2,.lg_fm_3,.lg_loading{ background: url(/resource/default/special/images/common/tishibg.png) no-repeat; width: 17px; height: 17px; vertical-align: -4px; *vertical-align: 0px; margin-right:5px; display: inline-block;}
+.lg_fm_2{ background-position: 0px -23px;}
+.lg_fm_3{ background-position: 0px -45px;}
+.lg_fm_close{ background: url(/resource/default/special/images/common/lg_close.png) no-repeat; width: 20px; height: 20px; display: block; position: absolute; right: 0px; top: 0px; cursor: pointer;}
+.lg_loading{ background: url(/resource/default/special/images/common/loading.gif) no-repeat center;}
+
+.fw_alt1,.fw_alt2,.fw_alt3{ background: url(/resource/default/special/images/app/home2.png) no-repeat -660px -139px; width: 17px; height: 17px; vertical-align: -4px; *vertical-align: 0px; margin-right:5px; display: inline-block;}
+.fw_alt2{ background-position: -727px -139px;}
+.fw_alt3{ background-position: -793px -139px;}
+.fw_alt_close{ background: url(/resource/default/special/images/app/home2.png) no-repeat -856px -137px; width: 20px; height: 20px; display: block; position: absolute; right: 0px; top: 0px; cursor: pointer;}
+.fw-body{height:100%;}
+.fw-body-center{width:100%;height:100%}
+.fw-body-footer{width:100%;}
+.app-content{width: 1000px;margin: auto;background: #fff;border: 1px solid #D6D6D6;border-top: none;border-bottom: none;margin-top: 38px;overflow: hidden;height: 100%;}
+/*11月1日新增*/
+.trt{ text-align: right;}
+.tlt{ text-align: left;}
+.tct{ text-align: center;}
+.drop{ border: 1px solid #EBEBEB; height: 28px; line-height: 28px; font-weight: bold; font-size: 14px; padding-left: 5px; display: inline-block; position: relative; width: 80px; margin-right: 5px; background: url(../images/button/select.png) no-repeat right center;}
+.dplist{ border: 1px solid #ebebeb; z-index: 2; width: 100%; top: 28px; overflow-y: auto; max-height:140px; display: none;position: absolute; left: -1px;}
+.dplist em{ display: block; padding: 0px 5px; background: #fff; font-style: normal;}
+.dplist em:hover{ background: #EFEFEF; cursor: pointer;}
+/*kankan user card*/
+.fw_layerpanl{background:url(/resource/default/zh-cn/images/home/layer_bg.png); padding:6px; border-radius:3px; position:absolute; display:none;left:50%; top:50%; margin-top:-126px; z-index:100; margin-left:-217px;}
+.fw_layerpanl_content{ background:#fff; border:1px solid #ccc;}
+.fw_layerpanl_close{ background:url(/resource/default/zh-cn/images/home/marin_sprite.png) no-repeat; position:absolute; top:10px; right:10px; padding:5px;width:10px; height:10px;}
+.fw_layerpanl_title{background:#E3E7E8; line-height:20px; padding:3px; cursor:move; display:block; font-size: 14px;}
+.fw_layerpanl_text{display:block;}
+.fw_layerpanl_loading{ background:url(/resource/default/zh-cn/images/common/loading.gif) no-repeat center; display:none; width:200px; height:35px;} 
+
+.com_center_delete_concel{ background:url(/resource/default/zh-cn/images/home/quxiao.png) no-repeat; color:#575E6D;height:26px; border-radius:3px; display:inline-block; cursor:pointer; width:50px;line-height:26px; margin:10px 10px; color:#999; text-align:center;}
+.com_center_delete_confirm{background:url(/resource/default/zh-cn/images/home/float_bg.png) 0 -76px repeat-x; height:26px; border-radius:3px; display:inline-block; width:50px;line-height:26px; margin:10px 10px; color:#fff; text-align:center; cursor:pointer;}
+
+.fw_backtop{ background:url(/resource/default/special/images/common/backTop.png); position:fixed; bottom:150px; margin-left:1007px; width:35px; height:35px; display:none;}
+.fw_backtop:hover{ background-position:35px 0px;}
+/*11月27日新增*/
+.select21{ border: 1px solid #EBEBEB; height: 21px; line-height: 21px; font-size: 14px; padding-left: 5px; display: inline-block; position: relative; width: 80px; margin-right: 5px; background: url(../images/button/select21.png) no-repeat right center #fff;}
+.select21 .dplist{ border: 1px solid #ebebeb; z-index: 2; width: 100%; top: 21px; display: none;position: absolute; left: -1px;}
+.select21 em{ display: block; padding: 0px 5px; background: #fff;}
+.select21 em:hover{ background: #EFEFEF; cursor: pointer;}
+/*--------BUTTON CSS--------------11月4日新增*/
+.blue46x28, .f346x28{ background: url(../images/button/46x28btn.png); width: 46px; height: 28px; line-height: 28px; color: #fff; text-align: center; display: inline-block; cursor: pointer; margin-left: 5px;}
+.f346x28{ background: url(../images/button/46x28btn.png) -56px 0px; color: #7B7C7E;}
+.blue56x38,.gray56x38,.f356x38{ background: url(../images/button/blue56x38.png); width: 56px; height: 38px; line-height: 38px; text-align: center; display: inline-block; color: #fff; font-size: 15px; cursor: pointer;}
+.gray56x38,.f356x38{ background: url(../images/button/gray56x38.png) 0px 1px; color: #7B7C7E;}
+
+/*com.css转移过来*/
+.com_center_title{ padding:25px 20px 0px 20px;}
+.com_center_title li{ padding:5px 0px; overflow:hidden;}
+.app_left_menu a{ text-decoration:none; color:#9B9FA5; display: block;}
+.app_left_checked a{ color:#fff;}
+.app_left_rt_div{ margin: 20px 10px 20px 20px; line-height:25px; font-size: 14px; color: #9A9FA5;}
+.com_kk_replay_men{  border-bottom: 1px solid #EAEAEA; margin: 10px; }
+.com_kk_replay_men a{ font-size:15px; color: #9B9FA4; border-bottom:4px solid transparent; padding:0px 10px; height:30px; line-height:30px; display: inline-block; margin-bottom: -1px; text-decoration:none;}
+.com_kk_replay_men .app_checked{ border-bottom-color: #47C6FD; color: #35A7E0; padding:0px 10px; font-weight:bold;}
+.fw_nocontent_tips_panl{border: 2px dotted #CCCCCC;font-size: 14.7px; font-weight: bold; line-height: 40px; margin: 20px; padding: 10px; text-align: center;}
+/*app_footer*/
+.app_footer{width:100%; height: 40px;}
+.fw_footer{ background:#F2F2F2;width:100%;margin-top:180px}
+.app_ft{ width: 1000px; margin: auto; text-align: center; line-height: 30px; padding: 20px 0px 10px 0px;}
+.app_ft_1{ color: #E6E6E6;}
+.app_ft_1 a{ margin: 0px 10px; color: #999999;}
+.app_ft_2{ color:#999999;}
+.app_ft_num,.app_ft_tel, .app_ft_qq{ margin: 0px 10px;}
+/*custom button*/
+.i8ctrl-radio,.i8ctrl-checkbox{display:inline-block;}        
+.i8ctrl-radio .btn-radio{display:inline-block;width:17px;height:17px;background: url(/resource/default/special/images/button/input.png) no-repeat 0 -67px;background-repeat: no-repeat;vertical-align: -3px;}
+.i8ctrl-radio .btn-radio.rdchecked{background-position: 0 -201px}
+.i8ctrl-checkbox .btn-check.ckchecked{background-position: 0 -134px}
+.i8ctrl-radio .btn-radio-txt,.i8ctrl-checkbox .btn-check-txt{display:inline-block;overflow:hidden;white-space:nowrap; margin-left: 5px;}
+/*意见反馈*/    
+.fw_qq_link{ background:url(/resource/default/zh-cn/images/common/qqlink.png) no-repeat center top; line-height:15px;color:#fff; width:30px; height:100px; display:block; position:absolute; top:-105px; right:0px;}
+.fw_feedback{ position:fixed; right:0px; bottom:10%; clear:both;width:30px; z-index:50;}
+.fw_feedback_tb{ width: 475px;}
+.fw_feedback th{ vertical-align:top; width: 30px; text-align: left;}
+.fw_feedback_btn{ background: #00B9F0; width:30px; height:106px; cursor:pointer; display:block; color:#fff; width:14px; padding:0px 8px 0px 8px; font-weight: bold;}
+.fw_feedback_btn:hover{ text-decoration:none; color:#fff;}
+.fw_feedback_content{ background:#fff; border: 2px solid #F0F1F3; padding:5px 10px; width:430px; }
+.fw_feedback_content .fw_guestback_panl dl input{width:340px;}
+.fw_feedback_content .fw_guestback_panl dl{ margin:5px 0px; overflow:hidden;}
+.fw_feedback_content .fw_guestback_panl dt{width:80px;}
+.fw_feedback_content .fw_guestback_panl dd{margin-left:80px;}
+.fw_feedback_content ul li{ margin:5px;}
+.fw_feedback_content textarea{ border-radius:3px; width:100%;}
+.fw_feedback_content .fw_guestback_panl textarea{width:342px;}
+.fw_feedback_content a{ text-align:center; width:47px; height:26px; color:#fff; border-radius:3px; margin-left:15px; display:inline-block; line-height:26px;}
+.fw_feedback_content a.fw_feedback_submit{background: url(/resource/default/zh-cn/images/home/float_bg.png) repeat-x scroll 0 -76px;}
+div.fw_feedback_content a.fw_feedback_cancel{background: url(/resource/default/zh-cn/images/home/quxiao.png) repeat; color: #575E6D;}
+i.app_left_message_w{ background-position: -264px -71px; margin-top:8px;background-image: url(/resource/default/special/images/app/home2.png); width: 16px; height: 16px; background-repeat: no-repeat; display: inline-block; vertical-align: -3px; *vertical-align: 1px; margin-right: 5px;}
+.aptsk_close{display: block; height: 27px; width: 27px; overflow: hidden; background: url(../images/app/qqclose.png) -112px 0; position: absolute; right: -5px; top: -15px; cursor: pointer;}

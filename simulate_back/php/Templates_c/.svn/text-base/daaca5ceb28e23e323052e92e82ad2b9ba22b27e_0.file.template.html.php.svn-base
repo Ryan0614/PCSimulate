@@ -1,0 +1,42 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-05-31 04:35:43
+  from "D:\xampp\htdocs\simulate\php\Templates\template.html" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_574cf87fa84253_23131359',
+  'file_dependency' => 
+  array (
+    'daaca5ceb28e23e323052e92e82ad2b9ba22b27e' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\simulate\\php\\Templates\\template.html',
+      1 => 1464661987,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_574cf87fa84253_23131359 ($_smarty_tpl) {
+?>
+<html>
+<head>
+<style type="text/css">
+.bold{
+    font-weight:bold;
+    font-size:12px;
+    padding:10px;
+    width: 300px;
+    border:solid 1px blue;
+    line-height:20px;
+}
+</style>
+</head>
+<body>
+<div class="bold"><?php echo $_smarty_tpl->tpl_vars['test']->value;?>
+</div>
+</body>
+</html><?php }
+}

@@ -1,0 +1,144 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-06-13 10:00:24
+  from "D:\xampp\htdocs\simulate\public\mydevice_ctrl.html" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_575e13b84c6c66_43375330',
+  'file_dependency' => 
+  array (
+    'ed29f5f0ab415cb62e162442884f36ef90a45946' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\simulate\\public\\mydevice_ctrl.html',
+      1 => 1465783186,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_575e13b84c6c66_43375330 ($_smarty_tpl) {
+?>
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的设备</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="../js/mydevice.js"><?php echo '</script'; ?>
+>
+</head>
+<body>
+    <!-- <div style="position: absolute; top: 38.5px; left: 404.5px; z-index:1005; opacity:1; width: 454px; height: 370px;" >
+    </div> -->
+    <div style="margin-left:500px" id="brandDiv"><img src="../images/fotile.jpg" width="339px" height="55px" />
+    </div>
+
+<!--     <div class="topbar-wrap white">
+        <div class="topbar-inner clearfix">
+            <div class="topbar-logo-wrap clearfix">
+                <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="container clearfix">
+        <div class="sidebar-wrap">
+            <div class="sidebar-title">
+                <h1>菜单</h1>
+            </div>
+            <div class="sidebar-content">
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
+                        <ul class="sub-menu">
+                            <li><a href="../php/mydevice.php"><i class="icon-font">&#xe008;</i>设备管理</a></li>
+                            <li><a href="../php/mydevice_ctrl.php"><i class="icon-font">&#xe005;</i>设备操作</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="#"><i class="icon-font">&#xe018;</i>系统管理</a>
+                        <ul class="sub-menu">
+                            <li><a href="system.html"><i class="icon-font">&#xe017;</i>系统设置</a></li>
+                            <li><a href="system.html"><i class="icon-font">&#xe037;</i>清理缓存</a></li>
+                            <li><a href="system.html"><i class="icon-font">&#xe046;</i>数据备份</a></li>
+                            <li><a href="system.html"><i class="icon-font">&#xe045;</i>数据还原</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <!--/sidebar-->
+        <div class="main-wrap">
+            <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a>首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">设备管理</span></div>
+            </div>
+
+            
+            <div class="result-wrap">
+                <form name="myform" id="myform" method="post">
+                    <div class="sidebar-title" style="display:inline;">
+                        <span>当前用户:&nbsp;&nbsp;&nbsp;</span>
+                        <span id="div_user" class="sidebar-title" ></span>
+                        <span id="div_username">admin</span>
+                    </span>
+                    </div>
+                   
+                    <div class="result-content">
+                        <table class="result-tab" width="100%">
+                            <tr>
+                                <!-- <th class="tc" width="5%"></th> -->
+                                <th>序号</th>
+                                <th>设备名称</th>
+                            </tr>
+                            <?php
+$_from = $_smarty_tpl->tpl_vars['devices']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_v_0_saved_item = isset($_smarty_tpl->tpl_vars['v']) ? $_smarty_tpl->tpl_vars['v'] : false;
+$__foreach_v_0_saved_key = isset($_smarty_tpl->tpl_vars['k']) ? $_smarty_tpl->tpl_vars['k'] : false;
+$_smarty_tpl->tpl_vars['v'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['k'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['v']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
+$_smarty_tpl->tpl_vars['v']->_loop = true;
+$__foreach_v_0_saved_local_item = $_smarty_tpl->tpl_vars['v'];
+?>
+                                <tr>
+                                    <td><?php echo $_smarty_tpl->tpl_vars['k']->value+1;?>
+</td>
+                                    <td><a href="<?php echo $_smarty_tpl->tpl_vars['v']->value[1];?>
+"><?php echo $_smarty_tpl->tpl_vars['v']->value[2];?>
+</a>
+                                </tr>                                                          
+                            <?php
+$_smarty_tpl->tpl_vars['v'] = $__foreach_v_0_saved_local_item;
+}
+if ($__foreach_v_0_saved_item) {
+$_smarty_tpl->tpl_vars['v'] = $__foreach_v_0_saved_item;
+}
+if ($__foreach_v_0_saved_key) {
+$_smarty_tpl->tpl_vars['k'] = $__foreach_v_0_saved_key;
+}
+?>
+                        </table>
+                       
+                    </div>
+                </form>
+                <div class="list-page">
+                        2016 © 宁波方太厨具有限公司.
+                    </div>
+            </div>
+        </div>
+        <!--/main-->
+    </div>
+</body>
+</html><?php }
+}

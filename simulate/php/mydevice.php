@@ -5,8 +5,10 @@ include_once('protocol.php');
 $smarty = new Smarty();
 $smarty -> template_dir = "../public";     //模板存放目录
 $smarty -> compile_dir = "./Templates_c";     //编译目录
-// $smarty -> left_delimiter = "{{";             //左定界符
-// $smarty -> right_delimiter = "}}";             //右定界符
+$smarty -> config_dir = "./configs";
+$smarty -> cache_dir = "./cache";
+//$smarty -> left_delimiter = "{{";             //左定界符
+//$smarty -> right_delimiter = "}}";             //右定界符
 
 $hello=explode("=", $_COOKIE["pcsimulate"]);
 if (file_exists("config/".$hello[2]."/device.json")){

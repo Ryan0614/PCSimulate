@@ -102,17 +102,17 @@
                                 <th>设备名称</th>
                                 <th>操作</th>
                             </tr>
-                            {foreach from=$devices key=k item=v}
+                            {{foreach from=$devices key=k item=v}}
                                 <tr>
-                                    <td>{$k+1}</td>  
-                                    <td >{$v[0]}</td> <!--设备类型-->
-                                    <td><a href="{$v[1]}">{$v[2]}</a>
+                                    <td>{{$k+1}}</td>  
+                                    <td >{{$v[0]}}</td> <!--设备类型-->
+                                    <td><a href="{{$v[1]}}">{{$v[2]}}</a>
                                     </td>
                                     <td>
-                                        <a id="delete{$k+1}" class="link-del" href="#" onclick="delDevice({$v[3]})" >删除设备</a>
+                                        <a id="delete{{$k+1}}" class="link-del" href="#" onclick="delDevice({{$v[3]}})" >删除设备</a>
                                     </td>
                                 </tr>                                                     
-                            {/foreach}
+                            {{/foreach}}
                         </table>
                        
                     </div>

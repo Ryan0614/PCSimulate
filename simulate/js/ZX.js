@@ -5,15 +5,6 @@ var day
 var hours
 var minutes
 var seconds
-function document.onkeydown()//屏蔽键盘F5  
-{  
-   if(window.event.keyCode == 116)  
-   {  
-     window.event.keyCode=0;  
-     event.cancelBubble=true;  
-     return false;  
-   }  
-} 
 
 window.onload=function(){
 	if(!checkCookie()){
