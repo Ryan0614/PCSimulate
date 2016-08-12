@@ -58,7 +58,7 @@ if (isset($_POST["run_status"])){
 	}else{
 		$config[3]=(int)$work_mode_value;
 	}
-	if(stripos($cook_book[$cook_book_value], "本地菜谱")==0){
+	if(stripos($cook_book[$cook_book_value], "网络菜谱")===false){
 		$config[4]=0xff;
 		$config[5]=(int)substr($cook_book[$cook_book_value], strlen("本地菜谱"));
 	}else{
@@ -96,7 +96,7 @@ if($config[3]/128 == 1)
 }
 $smarty -> assign('data3_1',$work);
 $smarty -> assign('data3_2', $work_mode);
-if ($config[4]=0xff){
+if ($config[4]==0xff){
 	$cook="本地菜谱";
 }else{
 	$cook="网络菜谱";
@@ -150,5 +150,9 @@ if (file_exists("config/".$hello[2]."/device.json")){
 $smarty -> assign("devices", $config);
 
 $smarty -> display('ZX001.html');
-
+function wlog($log)
+{
+	$l = file_get_contents("logfile");
+	file_put_contents("logfile", $l.$log."\n");
+}
 ?>
