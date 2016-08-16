@@ -15,6 +15,12 @@ window.onload=function(){
 	showproduct()
 	syncUI()
 }
+document.onkeydown=function(event){
+  var e = event || window.event || arguments.callee.caller.arguments[0];
+  if(e && e.keyCode==116){ // 按 Esc 
+    location.reload(true)
+   }
+}; 
 
 function checkCookie(){
 	var strCookie=document.cookie;
@@ -132,14 +138,22 @@ function showServerTime(json){
 	time=year+'-'+month+'-'+day +' '+hours+':'+minutes+':'+seconds
 	showtime(time);
 }
+function initTime()
+{
+	now=new Date()
+	year=now.getFullYear()
+	month=checkTime(now.getMonth()+1)
+	day=checkTime(now.getDate())
+	hours=checkTime(now.getHours())
+	minutes=checkTime(now.getMinutes())
+	seconds=checkTime(now.getSeconds())
+	time=year+'-'+month+'-'+day +' '+hours+':'+minutes+':'+seconds
+	showtime(time)
+}
+function updateTime(){
+	now=new Date(year, month-1, day, hours, minutes, seconds)
+	now.setTime(now.getTime()+1000)
 
-function updateTime(flag=false){
-	if (flag){
-		now=new Date()
-	}else{
-		now=new Date(year, month-1, day, hours, minutes, seconds)
-		now.setTime(now.getTime()+1000)
-	}
 	year=now.getFullYear()
 	month=checkTime(now.getMonth()+1)
 	day=checkTime(now.getDate())
@@ -150,7 +164,7 @@ function updateTime(flag=false){
 	showtime(time)
 }
 function letstart(){
-	updateTime(true)
+	initTime()
 	taskId=setInterval(updateTime,1000)
 	taskId2=setInterval(getData, 500, 0xf3)
 }
