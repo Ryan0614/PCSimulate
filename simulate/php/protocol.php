@@ -9,10 +9,14 @@
 // $PAYLOAD="12345678";    //内容对应具体命令
 //$CRC=0x0100;            //各字节相异或，CRC[1]=异或结果，默认CRC[0] = 0x00
 /************协议格式 END********************/
+include_once('sql_operate.php');
 $DEVICE_TYPE=array(0x01=>"蒸箱",0x02=>"烤箱",0x03=>"微波炉",0x04=>"油烟机",0x05=>"燃气灶",
     0x06=>"消毒柜",0x07=>"热水器",0x08=>"洗碗机",0x09=>"净水器",0x10=>"蒸微一体机");
 
-$DEVICE_TYPE_CONFIG=array(0x01=>"zx_config.json",0x02=>"kx_config.json",0x03=>"wbl_config.json",0x04=>"yyj_config.json",0x05=>"rqz_config.json",0x06=>"xdg_config.json",0x07=>"rsq_config.json",0x08=>"xwj_config.json",0x09=>"jsq_config.json",0x10=>"zwytj_config.json");
+$DEVICE_TYPE_CONFIG=array(0x01=>"zx_config.json",0x02=>"kx_config.json",0x03=>"wbl_config.json",0x04=>"yyj_config.json",0x05=>"rqz_config.json",0x06=>"xdg_config.json",0x07=>"rsq_config.json",0x08=>"xwj_config.json",0x09=>"jsq_config.json",0x0a=>"zwytj_config.json");
+
+
+$CONFIG_TYPE = 0;    // 0:json 1: mysql
 
 function BITMASK($ii){
     return 1<<$ii;
@@ -67,7 +71,11 @@ function readData(){    //done
     //将uart的string解析成数组
     $send="read";
     $d=udpSend($send);
+   
     if ($d=="null" ||$d==null){ //no data  or  no server
+        $log = new StdClass();
+        $log->log = "no uart server";
+        echo json_encode($log);
         return;
     }
     $data=parserData($d);
@@ -152,8 +160,18 @@ function udpSend($sendMsg = '', $ip = "127.0.0.1", $port = '8888'){
 }  
 
 function setConfig($data, $file){
-    if ($file !="authentication.json")
-    {
+    global $CONFIG_TYPE;
+    if ($CONFIG_TYPE == 0)
+        setJsonConfig($data, $file);
+    else if ($CONFIG_TYPE == 1)
+        setMysqlConfig($data, $file);
+}
+function setMysqlConfig($data, $file)
+{
+    setSqlConfig($data, $file);
+}
+function setJsonConfig($data, $file){
+    if ($file !="authentication.json"){
         $dir=explode('/', $file);
         if(!is_dir("config/".$dir[0]))
             mkdir("config/".$dir[0]);
@@ -161,11 +179,24 @@ function setConfig($data, $file){
     file_put_contents("config/".$file,json_encode($data));
 }
 function getConfig($file){
+    global $CONFIG_TYPE;
+    if ($CONFIG_TYPE == 0){
+        return getJsonConfig($file);
+    }
+    else if ($CONFIG_TYPE == 1){
+        return getMySqlConfig($file);
+    }
+}
+function getMySqlConfig($file){
+    return getSqlConfig($file);
+}
+function getJsonConfig($file){
     $d=file_get_contents("config/".$file);
     //$d=json_decode($d, true);     //解析数组
     $d=json_decode($d);
     return $d;
 }
+
 function processProtocol($data){
     global $Sfunc;
     global $Rfunc;
@@ -173,27 +204,44 @@ function processProtocol($data){
 
     
     if ($data["head"]!=0xF4F5){
-        echo "head error!->".$data["head"];
+        $log = new StdClass();
+        $log->log = "head error!->".$data["head"];
+        echo json_encode($log);
         return ;
     }
     if ($data["len"]!=(count($data["payload"])+8)){
-        echo "len error!->".$data["len"];
+        $log = new StdClass();
+        $log->log = "len error!->".$data["len"];
+        echo json_encode($log);
+
         return M_R_WrongMsg($data["type"], 0x04);
     }
     if (!array_key_exists((int)($data["type"]/256), $DEVICE_TYPE)){
-        echo "type error!->".$data["type"];
+        $log = new StdClass();
+        $log->log = "type error!->".$data["type"];
+        echo json_encode($log);
+
         return M_R_WrongMsg($data["type"], 0x01);
     }
     if (!array_key_exists($data["cmd"], $Sfunc)){
-        echo "cmd error!->".$data["cmd"];
+        $log = new StdClass();
+        $log->log = "cmd error!->".$data["cmd"];
+        echo json_encode($log);
+
         return M_R_WrongMsg($data["type"], 0x03);
     }
     if ($data["flags"]!=0x0000){
-        echo "flags error!->".$data["flags"];
+        $log = new StdClass();
+        $log->log = "flags error!->".$data["flags"];
+        echo json_encode($log);
+
         return;
     }
     if ((int)($data["crc"]%256)!=getCrc($data)){
-        echo "crc error!->".$data["crc"];
+        $log = new StdClass();
+        $log->log = "crc error!->".$data["crc"];
+        echo json_encode($log);
+
         return;
     }
     if ($data["stat"]==0x01 ){
@@ -201,7 +249,10 @@ function processProtocol($data){
     }else if($data["stat"]==0x02){
         return call($Rfunc[$data["cmd"]], $data);
     }else{
-        echo "stat error!->".$data["stat"];
+        $log = new StdClass();
+        $log->log = "stat error!->".$data["stat"];
+        echo json_encode($log);
+      
         return M_R_WrongMsg($data["type"], 0x03);
     }
 

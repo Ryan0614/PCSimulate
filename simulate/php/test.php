@@ -6,6 +6,7 @@
 // $System = java("java.lang.System");
 // echo $System->getProperties();
 include_once('protocol.php');
+include_once('sql_operate.php');
 
 $DEVICE_type=array(0x01=>"蒸箱",0x02=>"烤箱",0x03=>"微波炉",0x04=>"油烟机",0x05=>"燃气灶",
 	0x06=>"消毒柜",0x07=>"热水器",0x08=>"洗碗机",0x09=>"净水器",0x10=>"蒸微一体机");
@@ -57,18 +58,12 @@ echo "*********************** PC模拟器协议测试************************";
 echo "<br>";
 //$result=processProtocol($data);
 
+$log = new StdClass();
+$log->log="123";
+print_r( $log);
 
 
 echo "<br>";
-$res[]=8;
-$res[]=0x18;
-$res[]=0x28;
-$res[]=0x38;
-$res[]=0x48;
-$res[]=0x11;
-$res[]=0x20;
-$res[]=0x20;
-//echo CRC_XModem($res, 8);
 
 echo "<br>";
 
@@ -77,7 +72,6 @@ echo "<br>";
 echo "<br>";
 
 
-//setConfig($hello, $hello[2]."/device.json");
 
 
 

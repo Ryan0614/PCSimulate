@@ -11,10 +11,16 @@ $smarty -> cache_dir = "./cache";
 //$smarty -> right_delimiter = "}}";             //右定界符
 
 $hello=explode("=", $_COOKIE["pcsimulate"]);
-if (file_exists("config/".$hello[2]."/device.json")){
-	$config=getConfig($hello[2]."/device.json");
-}else{
+
+if ($CONFIG_TYPE == 0){
+	if (file_exists("config/".$hello[2]."/device.json")){
+		$config=getConfig($hello[2]."/device.json");
+	}else{
+		$config=new StdClass;
+	}
+}else if ($CONFIG_TYPE == 1){
 	$config=new StdClass;
+	$config=getConfig($hello[2]."/device.json");
 }
 $smarty -> assign("devices", $config);
 $smarty -> display('mydevice.html');

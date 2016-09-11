@@ -11,16 +11,17 @@ $smarty -> compile_dir = "./Templates_c";     //编译目录
 //get cookie
 $hello=explode("=", $_COOKIE["pcsimulate"]);
 //default
-$hello=explode("=", $_COOKIE["pcsimulate"]);
-if (file_exists("config/".$hello[2]."/device.json")){
-	$config=getConfig($hello[2]."/device.json");
-}else{
-	$config=new StdClass;
-}
-
-if(!file_exists("config/".$hello[2]."/zx_config.json")){
-	$config=getDefaultConfig(0x01);
-	setConfig($config, $hello[2]."/zx_config.json");
+if ($CONFIG_TYPE == 0){
+	if(!file_exists("config/".$hello[2]."/zx_config.json")){
+		$config=getDefaultConfig(0x01);
+		setConfig($config, $hello[2]."/zx_config.json");
+	}
+}else if ($CONFIG_TYPE == 1){
+	$cfg=getConfig($hello[2]."/zx_config.json");
+	if ($cfg->config == NULL){
+		$config=getDefaultConfig(0x01);
+		setConfig($config, $hello[2]."/zx_config.json");
+	}
 }
 $cfg=getConfig($hello[2]."/zx_config.json");
 $config=$cfg->config;

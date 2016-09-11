@@ -17,10 +17,21 @@ window.onload=function(){
 }
 document.onkeydown=function(event){
   var e = event || window.event || arguments.callee.caller.arguments[0];
-  if(e && e.keyCode==116){ // 按 Esc 
+  if(e && e.keyCode==116){ // 按 f5
     location.reload(true)
    }
-}; 
+};
+
+function letstart(){
+	initTime()
+	taskId=setInterval(updateTime,1000)
+	taskId2=setInterval(getData, 500, 0xf3)
+}
+
+function download(){
+	//getData(0xf3)
+	window.open("../download/comtest.exe")
+}
 
 function checkCookie(){
 	var strCookie=document.cookie;
@@ -91,10 +102,7 @@ function stateChanged()
 		}
 	} 
 }
-function download(){
-	//getData(0xf3)
-	window.open("../download/comtest.exe")
-}
+
 function reportStatus(str){
 	getData(0x32)
 }
@@ -163,11 +171,7 @@ function updateTime(){
 	time=year+'-'+month+'-'+day +' '+hours+':'+minutes+':'+seconds
 	showtime(time)
 }
-function letstart(){
-	initTime()
-	taskId=setInterval(updateTime,1000)
-	taskId2=setInterval(getData, 500, 0xf3)
-}
+
 function rcvUartData(str){
 	alert(str)
 	getData(0xf3)

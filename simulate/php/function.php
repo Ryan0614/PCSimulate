@@ -12,16 +12,79 @@ $model=0;
 
 if ($cmd == 0x06)	//mcu校时
 {
-	M_S_ConfigTime($cmd, $type*256+$model);
+    M_S_ConfigTime($cmd, $type*256+$model);
 }else if ($cmd == 0x32){	//mcu 上报状态
     M_S_ReportStatus($cmd, $type*256+$model);
-}
-else if ($cmd == 0x04){  //mcu 配置wifi
+}else if ($cmd == 0x04){  //mcu 配置wifi
     M_S_ConfigWifi($cmd, $type*256+$model, getPayload($mode));
-}
-else if ($cmd == 0x07){     //mcu 查询wifi mac
+}else if ($cmd == 0x07){     //mcu 查询wifi mac
     M_S_WifiMac($cmd, $type*256+$model);
-}else if ($cmd == 0xf1){  
+}else if ($cmd == 0xf1){
+    if($CONFIG_TYPE == 0){
+        addDevice_Json();
+    }else{
+        addDevice_Sql();
+    }
+    return;
+}else if ($cmd == 0xf2){
+    if($CONFIG_TYPE == 0){
+        delDevice_Json();
+    }else{
+        delDevice_Sql();
+    }
+    return;
+}else if($cmd == 0xf3) {
+    //更新UI
+    //处理WIFI发送过来的消息
+    readData();
+}
+//echo "haode";
+
+
+function addDevice_Sql()
+{
+    global $user;
+    global $type;
+    
+
+    $res = addDevice_mysql($user, $type);
+
+    if ($res == 0){
+        $log["response"]=$deviceType[$type]." 添加成功!";
+        echo json_encode($log);
+        return;
+    }else if ($res == 1){
+        $log["response"]=$deviceType[$type]." 已存在!";
+        echo json_encode($log);
+        return;
+    }
+ 
+}
+
+function delDevice_Sql()
+{
+    global $user;
+    global $type;
+
+
+    $res = delDevice_mysql($user, $type);
+
+    if ($res == 0){
+        $log["response"]=$deviceType[$type]." 删除成功!";
+        echo json_encode($log);
+        return;
+    }else if ($res == 1){
+        $log["response"]=$deviceType[$type]." 未配置!";
+        echo json_encode($log);
+    }
+}
+
+function addDevice_Json()
+{
+    global $user;
+    global $type;
+    global $deviceTypeIndex;
+    global $deviceType;
     if (file_exists("config/".$user."/device.json")){
         $userDevice=getConfig($user."/device.json");
 
@@ -37,8 +100,12 @@ else if ($cmd == 0x07){     //mcu 查询wifi mac
     setConfig($userDevice, $user."/device.json");
     $log["response"]=$deviceType[$type]." 添加成功!";
     echo json_encode($log);
-    return;
-}else if ($cmd == 0xf2){
+}
+
+function delDevice_Json()
+{
+    global $user;
+    global $type;
     if (file_exists("config/".$user."/device.json")){
         $userDevice=getConfig($user."/device.json");
 
@@ -63,13 +130,7 @@ else if ($cmd == 0x07){     //mcu 查询wifi mac
     }  
     $log["response"]=$deviceType[$type]." 未配置!";
     echo json_encode($log);
-    return;
-}else if($cmd == 0xf3) {
-    //更新UI
-    //处理WIFI发送过来的消息
-    readData();
 }
-
 
 function getPayload($mode,$ssid="ssid",$pwd="123456"){
     $data[0]=$mode;   //1 恢复出厂 2重启wifi 4wifi休眠 8wifi进入厂测 10wifi进入easylink 17ap模式及参数 18station模式及参数
